@@ -10,8 +10,8 @@ const genAI = new GoogleGenerativeAI(process.env.AI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 app.use(
   cors({
-    origin: "https://66dd8f7ff9a7e5e796c2674b--taiyarikarlo.netlify.app/",
-    credentials: true,
+    origin: "*",
+    credentials: false,
   })
 );
 app.use(express.json());
