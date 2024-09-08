@@ -30,7 +30,7 @@ app.use("/api/auth", AuthRoute);
 app.post("/api/questions/create-ques", async (req, res) => {
   try {
     const { language, level } = req.body;
-    const prompt = `Write 5 Interview Questions of ${level} difficulty on the topic ${language} for a developer role,dont add any other info other than questions , just questions`;
+    const prompt = `Write 5 Interview Questions of ${level} difficulty on the topic ${language} for a developer role,dont add any other info other than questions , just questions and dont repeat same questions everytime`;
     const result = await model.generateContent(prompt);
     const responseText = result.response.text();
     const questionsArray = responseText
